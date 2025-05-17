@@ -5,9 +5,8 @@ const userSchema=new mongoose.Schema({
     email:{type:String,required:true,unique:true},
     photo:{type:String,required:true},
     firstName:{type:String},
-    clerkId:{type:String},
-    creeditBalance:{type:Number,default:5}
+    creditBalance:{type:Number,default:5}
 })
 
-const userModel=mongoose.model.user||mongoose.model('user',userSchema)
+const userModel=mongoose.models.user || mongoose.model('user',userSchema)
 export default userModel;
