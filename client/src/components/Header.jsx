@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { assets } from '../assets/assets';
+import { AppContext } from '../context/AppContext';
 
 const Header = () => {
+  const{removeBG}=useContext(AppContext);
   return (
     <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 px-4 lg:px-44 mt-10 sm:mt-20">
       {/* Left Side */}
@@ -20,7 +22,7 @@ const Header = () => {
         </p>
 
         <div>
-          <input type="file" id="upload1" hidden />
+          <input onChange={e=> removeBG(e.target.files[0])} type="file" accept='image/*' id="upload1" hidden />
           <label
             htmlFor="upload1"
             className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full cursor-pointer bg-gradient-to-r from-violet-600 to-fuchsia-500 hover:scale-105 transition-transform duration-500"

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { assets } from '../assets/assets'; // Don't forget to import your assets
+import { AppContext } from '../context/AppContext';
 
 const Upload = () => {
+  const{removeBG}=useContext(AppContext)
   return (
     <div className="pb-20 text-center">
       {/* Title */}
@@ -11,7 +13,7 @@ const Upload = () => {
 
       {/* Upload Button */}
       <div className="mt-6">
-        <input type="file" id="upload1" hidden />
+        <input onChange={e=> removeBG(e.target.files[0])}  type="file" accept='image/*' id="upload1" hidden />
         <label
           htmlFor="upload1"
           className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full cursor-pointer bg-gradient-to-r from-violet-600 to-fuchsia-500 hover:scale-105 transition-transform duration-300 shadow-md"
