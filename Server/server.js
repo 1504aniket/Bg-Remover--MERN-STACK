@@ -11,7 +11,10 @@ const PORT = 4000;
 const app = express();
 
 connectDB();
-app.use(cors());
+app.use(cors({
+    origin:['https://bgremoverr.vercel.app'],
+    credentials:true,
+}));
 
 app.use('/api/user/webhooks', bodyParser.raw({ type: 'application/json' }));
 app.use(express.json());

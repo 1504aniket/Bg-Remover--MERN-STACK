@@ -26,7 +26,7 @@ const BuyCredit = () => {
           console.log(response)
           const token=await getToken()
           try{
-            const {data}=await axios.post(backendUrl+'api/user/verify-razor',{razorpay_order_id:response.razorpay_order_id},{headers:{Authorization:`Bearer${token}`}})
+            const {data}=await axios.post(backendUrl+'api/user/verify-razor',{razorpay_order_id:response.razorpay_order_id},{headers:{Authorization:`Bearer ${token}`}})
             if(data.success){
               loadingcredits()
               navigate('/')
