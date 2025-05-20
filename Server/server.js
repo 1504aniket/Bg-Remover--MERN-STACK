@@ -12,7 +12,7 @@ const app = express();
 
 connectDB();
 app.use(cors({
-    origin:['https://bgremoverr.vercel.app'],
+    origin:['https://bg-remover-mern-stack.vercel.app'],
     credentials:true,
 }));
 
